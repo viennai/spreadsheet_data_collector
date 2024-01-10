@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+  database:
+    container_name: databaz
+    image: postgres:14
+    environment:
+      POSTGRES_DB: dbz
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 12345678
+    ports:
+      - 5432:5432
+    volumes:
+      - ./.docker/dev/database/data:/var/lib/postgresql/data
